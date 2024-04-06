@@ -5,15 +5,25 @@ const post = (payload) => {
     return product1.save();
 };
 
-const getCount = () => {
-    return Product.countDocuments();
+const getFilterExp = (search) => {
+    return{
+        status: new RegExp(search, 'i')
+    };
 };
 
-const get = (currentPage,size) => {
+const getCount = (status) => {
+    const filter = getFilterExp(status);
+    return Product.countDocuments(filter);
+};
+
+const get = (options) => {
+    const {currentPage,size,status} = options;
+
     const rowsToSkip = (currentPage - 1) * size;
+    const filter = getFilterExp(status);
 
     return Product
-    .find({},{__v:0})
+    .find(filter,{__v:0})
     .skip(rowsToSkip)
     .limit(size)
 };
@@ -36,8 +46,9 @@ const patch = (id,payload) => {
 
 module.exports = {
     post,
-    get,
+    getFilterExp,
     getCount,
+    get,
     getById,
     remove,
     put,

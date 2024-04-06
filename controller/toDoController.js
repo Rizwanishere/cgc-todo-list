@@ -14,13 +14,16 @@ const post = async(req,res) => {
 
 const get = async(req,res) => {
     try{
-        const page = req.params.page || 1;
-        const size = req.params.size || 5;
+        const options = {
+            page: req.params.page || 1,
+            size: req.params.size || 5,
+            status: req.query.status,   
+        }
         
-        const data = await toDoRepo.get(page,size);
+        const data = await toDoRepo.get(options);
 
-        const totalRows = await toDoRepo.getCount();
-        const totalPages = Math.ceil(totalRows / size);
+        const totalRows = await toDoRepo.getCount(options.status);
+        const totalPages = Math.ceil(totalRows / options.size);
 
         const response = {
             data,
