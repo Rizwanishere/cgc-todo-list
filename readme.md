@@ -1,4 +1,6 @@
 # TO-DO LIST
+A simple todo app built on node.js connected with mongoDB
+![todo App](https://raw.githubusercontent.com/Rizwanishere/cgc-todo-list/main/images/toDO.png)
 
 ### EndPoints
 - http://localhost:3000/todo
@@ -13,6 +15,7 @@
 - Validation
 - Deployment Ready
 
+### Setup
 1. Download node.js from here https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi
 2. Check its version using command 'node -v'
 3. git clone https://github.com/Rizwanishere/cgc-todo-list.git
