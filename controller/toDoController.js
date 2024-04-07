@@ -3,7 +3,11 @@ const toDoRepo = require('../repository/toDoRepo');
 const post = async(req,res) => {
     const payload = req.body;
     
-    try{
+    try{ 
+        if(!payload.status || !payload.title){
+        res.status(400).send('Enter the mandatory fields');
+        return;
+        }
         await toDoRepo.post(payload);
         res.status(201).send('Inserted');
     }catch(err){
@@ -15,16 +19,16 @@ const post = async(req,res) => {
 const get = async(req,res) => {
     try{
         const options = {
-            page: req.params.page || 1,
-            size: req.params.size || 5,
-            status: req.query.status,   
+        page : req.params.page || 1,
+        size : req.params.size || 5,
+        status : req.query.status,
         }
-        
+
         const data = await toDoRepo.get(options);
 
         const totalRows = await toDoRepo.getCount(options.status);
         const totalPages = Math.ceil(totalRows / options.size);
-
+        
         const response = {
             data,
             totalRows,
@@ -52,6 +56,10 @@ const getById = async(req,res) => {
 const remove = async(req,res) => {
     const id = req.params.id;
     try{
+        if(!id){
+            res.status(404).send('Enter correct id');
+            return;
+        }
         await toDoRepo.remove(id);
         res.status(204).send('Deleted');   
     }catch(err){
@@ -64,6 +72,10 @@ const put = async(req,res) => {
     const id = req.params.id;
     const payload = req.body;
     try{
+        if(!payload.title || !payload.description || payload.status){
+            res.status(400).send('Enter mandatory fields');
+            return;
+        }
         await toDoRepo.put(id,payload);
         res.status(204).send('Updated');
     }catch(err){

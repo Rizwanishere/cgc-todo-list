@@ -17,9 +17,9 @@ const getCount = (status) => {
 };
 
 const get = (options) => {
-    const {currentPage,size,status} = options;
+    const {page,size,status} = options;
 
-    const rowsToSkip = (currentPage - 1) * size;
+    const rowsToSkip = (page - 1) * size;
     const filter = getFilterExp(status);
 
     return Product
