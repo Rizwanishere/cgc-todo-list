@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const homeRoutes = require('./routes/homeRoute');
 const toDoRoutes = require('./routes/toDoRoute');
@@ -9,6 +10,8 @@ const port = 3000;
 
 /* For Deployment 
 const port = process.env.PORT */
+
+app.use(cors());
 
 app.listen(port,() => {
     console.log(`The port is running on http://localhost:${port}/todo`);
