@@ -11,7 +11,7 @@ const port = 3000;
 const port = process.env.PORT */
 
 app.listen(port,() => {
-    console.log(`The port is running on http://localhost:${port}/`);
+    console.log(`The port is running on http://localhost:${port}/todo`);
 });
 
 app.use(express.json());

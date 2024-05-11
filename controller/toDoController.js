@@ -26,13 +26,17 @@ const get = async(req,res) => {
 
         const data = await toDoRepo.get(options);
 
-        const totalRows = await toDoRepo.getCount(options.status);
-        const totalPages = Math.ceil(totalRows / options.size);
+        const rows = await toDoRepo.getCount(options.status);
+        const pages = Math.ceil(rows / options.size);
         
+        const metadata= {
+            rows,
+            pages
+        }
+
         const response = {
             data,
-            totalRows,
-            totalPages,
+            metadata
         }
 
         res.status(200).json(response);
