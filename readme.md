@@ -8,7 +8,7 @@ A simple todo app built on node.js connected with mongoDB
 ### Tasks done!
 - CRUD Operations from mongoDB
 - Pagination
-- search by status (now deleted)
+- search by status
 - Validation
 - Deployment Ready
 - Search by title or description
