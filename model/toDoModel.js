@@ -11,6 +11,6 @@ const schema = new mongoose.Schema({
     status: {type: String, required: [true,'Status field is mandatory']}
 });
 
-schema.index({ title: 1, description: 1 });
+schema.index({ title: 1, description: 1, status: 1 });
 
 module.exports = mongoose.model('todo',schema);

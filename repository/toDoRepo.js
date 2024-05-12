@@ -9,7 +9,8 @@ const getFilterExp = (search) => {
     return{
         $or:[
             {title: new RegExp(search,'i')},
-            {description: new RegExp(search,'i')}
+            {description: new RegExp(search,'i')},
+            {status: new RegExp(search,'i')}
         ]
     };
 };
