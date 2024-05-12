@@ -21,7 +21,7 @@ const get = async(req,res) => {
         const options = {
         page : req.params.page || 1,
         size : req.params.size || 5,
-        status : req.query.status,
+        search : req.query.search,
         }
 
         const data = await toDoRepo.get(options);

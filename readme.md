@@ -4,16 +4,14 @@ A simple todo app built on node.js connected with mongoDB
 
 ### EndPoints
 - http://localhost:3000/todo
-- http://localhost:3000/todo/page/1/size/5?status=pending
-- http://localhost:3000/todo/page/1/size/5?status=in-progress
-- http://localhost:3000/todo/page/1/size/5?status=completed
-
+- http://localhost:3000/todo/page/1/size/5?search=
 ### Tasks done!
 - CRUD Operations from mongoDB
 - Pagination
-- search by status
+- search by status (now deleted)
 - Validation
 - Deployment Ready
+- Search by title or description
 
 ### Setup
 1. Download node.js from here https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi

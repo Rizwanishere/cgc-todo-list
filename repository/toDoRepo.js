@@ -7,20 +7,23 @@ const post = (payload) => {
 
 const getFilterExp = (search) => {
     return{
-        status: new RegExp(search, 'i')
+        $or:[
+            {title: new RegExp(search,'i')},
+            {description: new RegExp(search,'i')}
+        ]
     };
 };
 
-const getCount = (status) => {
-    const filter = getFilterExp(status);
+const getCount = (search) => {
+    const filter = getFilterExp(search);
     return Product.countDocuments(filter);
 };
 
 const get = (options) => {
-    const {page,size,status} = options;
+    const {page,size,search} = options;
 
     const rowsToSkip = (page - 1) * size;
-    const filter = getFilterExp(status);
+    const filter = getFilterExp(search);
 
     return Product
     .find(filter,{__v:0})
