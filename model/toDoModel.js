@@ -5,7 +5,7 @@ const schema = new mongoose.Schema({
     description: {
         type: String,
         minLength: [6,'Minimum 6 characters'],
-        maxLength: [40,'maximum 40 characters']
+        maxLength: [100,'maximum 100 characters']
     },
     createdDate: {type: Date},
     status: {type: String, required: [true,'Status field is mandatory']}
