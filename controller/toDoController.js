@@ -28,7 +28,7 @@ const get = async(req,res) => {
 
         const data = await toDoRepo.get(options);
 
-        const rows = await toDoRepo.getCount(options.status);
+        const rows = await toDoRepo.getCount(options.search);
         const pages = Math.ceil(rows / options.size);
         
         const metadata= {

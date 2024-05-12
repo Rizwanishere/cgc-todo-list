@@ -11,7 +11,7 @@ A simple todo app built on node.js connected with mongoDB
 - search by status
 - Validation
 - Deployment Ready
-- Search by title or description
+- Search by title or description or status
 
 ### Setup
 1. Download node.js from here https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi
