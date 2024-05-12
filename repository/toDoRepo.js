@@ -20,13 +20,19 @@ const getCount = (search) => {
 };
 
 const get = (options) => {
-    const {page,size,search} = options;
+    const {page,size,search,sort,direction} = options;
 
     const rowsToSkip = (page - 1) * size;
     const filter = getFilterExp(search);
 
+    let sortDir = 1;
+    if(direction.toLowerCase() === 'desc'){
+        sortDir = -1;
+    }
+
     return Product
     .find(filter,{__v:0})
+    .sort({[sort]: sortDir})
     .skip(rowsToSkip)
     .limit(size)
 };
