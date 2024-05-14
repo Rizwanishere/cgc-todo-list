@@ -6,10 +6,9 @@ const homeRoutes = require('./routes/homeRoute');
 const toDoRoutes = require('./routes/toDoRoute');
 
 const app = express();
-const port = 3000;
 
-/* For Deployment 
-const port = process.env.PORT */
+// For Deployment 
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -19,11 +18,13 @@ app.listen(port,() => {
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/todo-db');
+// mongoose.connect('mongodb://localhost:27017/todo-db');
 
-/* For Deployment
-const dbConnect = process.env.dbConStr;
-mongoose.connect(dbConnect); */
+// For Deployment
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/todo-db';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
 console.log('DB connected');
 
