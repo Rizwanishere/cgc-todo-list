@@ -22,3 +22,6 @@ A simple todo app built on node.js connected with mongoDB
 6. Install nodemon - npm i nodemon
 7. Install mongodb from here https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.8-signed.msi
 8. npm install mongoose
+
+### Deployment
+- Successfully deployed on (https://cgc-todo-list.onrender.com/todo)
