@@ -2,9 +2,6 @@
 A simple todo app built on node.js connected with mongoDB
 ![todo App](https://raw.githubusercontent.com/Rizwanishere/cgc-todo-list/main/images/toDO.png)
 
-### EndPoints
-- http://localhost:3000/todo
-- http://localhost:3000/todo/page/1/size/5?search=
 ### Tasks done!
 - CRUD Operations from mongoDB
 - Pagination
@@ -24,4 +21,4 @@ A simple todo app built on node.js connected with mongoDB
 8. npm install mongoose
 
 ### Deployment
-- Successfully deployed on (https://cgc-todo-list.onrender.com/todo)
+- Deployed on Render (https://cgc-todo-list.onrender.com/todo)
