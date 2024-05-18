@@ -5,10 +5,11 @@ A simple todo app built on node.js connected with mongoDB
 ### Tasks done!
 - CRUD Operations from mongoDB
 - Pagination
-- search by status
 - Validation
 - Deployment Ready
 - Search by title or description or status
+- Added sort functionality
+- Deployed on Render
 
 ### Endpoints
 - https://cgc-todo-list.onrender.com/todo
