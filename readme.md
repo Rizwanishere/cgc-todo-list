@@ -10,6 +10,15 @@ A simple todo app built on node.js connected with mongoDB
 - Deployment Ready
 - Search by title or description or status
 
+### Endpoints
+Main URL (https://cgc-todo-list.onrender.com/todo/page/${page}/size/6?search=${search}&sort=${sort}&direction=${direction})
+Note: The values in { } can be changed
+https://cgc-todo-list.onrender.com/todo
+https://cgc-todo-list.onrender.com/todo/page/1/size/10
+https://cgc-todo-list.onrender.com/todo?search=cgc
+https://cgc-todo-list.onrender.com/todo/page/1/size/10?&sort=_id&direction=asc
+https://cgc-todo-list.onrender.com/todo/page/1/size/10?&sort=_id&direction=desc
+
 ### Setup
 1. Download node.js from here https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi
 2. Check its version using command 'node -v'
